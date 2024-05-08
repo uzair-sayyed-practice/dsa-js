@@ -18,7 +18,7 @@ function logAtmost10(n){
 // logAtmost10(4);
 // let t2 = performance.now();
 // console.log(t2 - t1);
-// logAtmost10(100);
+// logAtmost10(100)
 
 
 function logAtleast10(n){

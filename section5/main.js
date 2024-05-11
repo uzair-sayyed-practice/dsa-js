@@ -87,4 +87,6 @@ function sameSqaure( arr1 , arr2){
         }
     }
     return true;
-}
+};
+
+console.log(sameSqaure(arr1, arr2))

@@ -35,29 +35,75 @@
 // another function to perform the same 
 
 
-function validAnagram(first,second){
-    if(first.length !== second.length){
-        false;
+// function validAnagram(first,second){
+//     if(first.length !== second.length){
+//         false;
+//     }
+
+//     let lookup ={};
+
+//     for (let i = 0; i < second.length; i++){
+//         let letter = second[i];
+//         lookup[letter]? lookup[letter] += 1 : lookup[letter] = 1;
+//     }
+
+
+//     for (let i = 0; i < first.length; i++){
+//         let letter = first[i];
+//         if(!lookup[letter]){
+//             return false;
+//         } else {
+//             lookup[letter] -= 1;
+//         }
+//     }
+
+//     return true;
+// }
+
+// console.log(validAnagram('anagram', 'nagaram'))
+
+
+
+
+
+
+const str1 = "man"
+const str2 = "nam"
+
+function anagram(str1,str2){
+    if(str1.length !== str2.length){
+        return false
     }
 
-    let lookup ={};
+    let frequencyCounter1 ={}
+    let frequencyCounter2 ={}
 
-    for (let i = 0; i < second.length; i++){
-        let letter = second[i];
-        lookup[letter]? lookup[letter] += 1 : lookup[letter] = 1;
-    }
-
-
-    for (let i = 0; i < first.length; i++){
-        let letter = first[i];
-        if(!lookup[letter]){
-            return false;
-        } else {
-            lookup[letter] -= 1;
+    for (let val of str1){
+        if(frequencyCounter1[val]){
+            frequencyCounter1[val] += 1
+        }else {
+            frequencyCounter1[val] = 1
         }
     }
 
-    return true;
+    for( let val of str2){
+        if(frequencyCounter2[val]){
+            frequencyCounter2[val] += 1
+        }else{
+            frequencyCounter2[val] = 1
+        }
+    }
+
+    for(let key in frequencyCounter1){
+        if(!(key in frequencyCounter2)){
+            return false
+        }
+    }
+
+    return true
 }
 
-console.log(validAnagram('anagram', 'nagaram'))
+
+
+const result = anagram('', '')
+console.log(result)
